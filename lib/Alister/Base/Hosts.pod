@@ -1,0 +1,118 @@
+=pod
+
+=head1 NAME
+
+Alister::Base::Hosts - management for a table of hosts
+
+=head1 SUBS
+
+None are exported by default.
+
+=head2 generate_host_idstring()
+
+Takes no argument. Returns idstring.
+
+=head2 host_add()
+
+Argument is dbh, and hostname.
+Optional argument is idstring. If no idstring is provided, one is generated.
+
+=head2 host_delete()
+
+First argument is dbh.
+Second argument is one of: id, name, idstring.
+Returns true or false.
+
+
+=head2 host_idstring_change()
+
+First argument is dbh.
+Second argument is one of: id, name, idstring.
+Third argument is new idstring.
+Returns host id.
+
+=head2 host_name_change()
+
+First argument is dbh.
+Second argument is one of: id, name, idstring.
+Third argument is new host name.
+Returns host id.
+
+
+=head2 resolve_argument_to_host()
+
+First argument is dbh.
+Second argument is one of: id, name, idstring.
+Returns array of; id, name, and idstring.
+
+   my($id, $name, $idstring) = resolve_argument_to_host( $dbh, 12 );
+   my($id, $name, $idstring) = resolve_argument_to_host( $dbh, 'host.name.here' );
+   my($id, $name, $idstring) = resolve_argument_to_host( $dbh,  '37499296692544879861385682919892');
+
+
+=head2 table_create_hosts()
+
+Argument is dbh.
+Returns bool.
+
+=head2 table_reset_hosts()
+
+Argument is dbh.
+Returns bool.
+
+=head2 validate_argument_host_idstring()
+
+Argument is idstring. 
+Returns idstring or undef.
+
+=head2 validate_argument_host_name()
+
+Argument is host name string.
+Returns host name or undef.
+
+=head2 validate_argument_id()
+
+Argument is id.
+Returns id or undef.
+
+
+=head2 validate_host_tuple()
+
+First argument is dbh.
+Second argument is host name.
+Third argument is idstring.
+Returns host id or undef.
+
+
+
+
+=head1 BUGS
+
+Please contact the AUTHOR for any issues, suggestions, bugs etc.
+
+=head1 AUTHOR
+
+Leo Charre leocharre at cpan dot org
+
+=head1 COPYRIGHT
+
+Copyright (c) Leo Charre. All rights reserved.
+
+=head1 LICENSE
+
+This program is free software; you can redistribute it and/or modify it under the same terms and conditions as Perl itself.
+
+This means that you can, at your option, redistribute it and/or modify it under either the terms the GNU Public License (GPL) version 1 or later, or under the Perl Artistic License.
+
+See http://dev.perl.org/licenses/
+
+=head1 DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+Use of this software in any way or in any form, source or binary, is not allowed in any country which prohibits disclaimers of any implied warranties of merchantability or fitness for a particular purpose or any disclaimers of a similar nature.
+
+IN NO EVENT SHALL I BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION (INCLUDING, BUT NOT LIMITED TO, LOST PROFITS) EVEN IF I HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+
+=cut
+

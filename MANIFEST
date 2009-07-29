@@ -1,0 +1,13 @@
+MANIFEST
+Makefile.PL
+lib/Alister/Base/Hosts.pm
+lib/Alister/Base/Hosts.pod
+t/00_basic_compile.t
+t/01_validate-etc.t
+t/02_setup-etc.t
+t/03_host_add.t
+t/04_host_delete.t
+t/05_host_update.t
+t/06_host_tuple.t
+t/testing.pl
+META.yml                                 Module meta-data (added by MakeMaker)
